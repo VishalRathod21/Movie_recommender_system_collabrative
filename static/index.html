@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CineMatch — AI Movie Recommendations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="modern.css" />
+  <meta name="theme-color" content="#0f172a" />
+</head>
+<body>
+  <div class="app">
+    <!-- Animated Background -->
+    <div class="animated-bg">
+      <div class="gradient-blob blob-1"></div>
+      <div class="gradient-blob blob-2"></div>
+      <div class="gradient-blob blob-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <div class="logo-icon">🎬</div>
+          <div class="logo-text">CineMatch</div>
+        </div>
+        <div class="header-actions">
+          <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+            <span class="theme-icon">🌙</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="title-word">Discover</span>
+          <span class="title-word highlight">Your Next</span>
+          <span class="title-word">Favorite Movie</span>
+        </h1>
+        <p class="hero-subtitle">Powered by advanced AI algorithms to find movies you'll love</p>
+      </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+      <div class="search-container">
+        <div class="input-wrapper">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+          <input 
+            id="movie-input" 
+            type="text" 
+            autocomplete="off" 
+            placeholder="Search any movie..." 
+            class="search-input"
+          />
+          <button id="clear-btn" class="clear-btn" type="button" aria-label="Clear search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <button id="search-btn" class="btn-primary">
+          <span>Search</span>
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Quick Picks -->
+      <div class="quick-picks">
+        <span class="quick-label">Try these:</span>
+        <div id="chips" class="chips">
+          <button class="chip" type="button">Avatar</button>
+          <button class="chip" type="button">Inception</button>
+          <button class="chip" type="button">Interstellar</button>
+          <button class="chip" type="button">Parasite</button>
+          <button class="chip" type="button">Oppenheimer</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section" id="results-card" aria-live="polite">
+      <div class="results-header">
+        <h2 id="results-title" class="results-title">Recommendations</h2>
+        <button id="copy-link" class="btn-icon-small" type="button" title="Copy shareable link" aria-label="Copy shareable link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+          </svg>
+        </button>
+      </div>
+      <ul id="results" class="results-grid"></ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>CineMatch © 2025 • Discover movies powered by AI</p>
+    </footer>
+  </div>
+
+  <div id="toast" role="status" aria-live="polite" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
